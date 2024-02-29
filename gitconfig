@@ -1,0 +1,69 @@
+[core]
+    editor = nvim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+[delta "decorations"]
+    commit-decoration-style = blue ol
+[user]
+	email = user@mail.com
+	name = username
+[alias]
+	a = add --all
+	ai = add -i
+	f = fetch
+	fo = fetch origin
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
+	re = reset
+	rh = reset HEAD
+	reh = reset --hard
+	rem = reset --mixed
+	res = reset --soft
+	rehh = reset --hard HEAD
+	remh = reset --mixed HEAD
+	resh = reset --soft HEAD
+	sa = stash apply
+	sc = stash clear
+	sd = stash drop
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	sw = stash show
+	st = status -sb
+	ci = commit -v
+	co = checkout
+	qa = commit --amend --no-edit
+	cof = !sh -c \"git branch -a | grep -v remotes | grep $1 | head -n 1 | xargs git checkout\"
+	cob = checkout -b
+	br = branch -a
+	unstage = reset HEAD --
+	amend = commit -a --amend
+	amendl = !git amend -C HEAD
+	undo = reset HEAD~1 --mixed
+	pushf = push --force-with-lease
+	glog = log --graph --oneline --decorate
+	pushr = rake dev:verify_files && git push
+	pushrf = rake dev:verify_files && git pushf
+	delr = push origin -d
+	dell = branch -d
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
+[diff]
+    colorMoved = default
+[merge]
+    conflictstyle = diff3
